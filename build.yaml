@@ -1,0 +1,14 @@
+builders:
+  platform_builder:
+    import: 'lib/builder/platform_builder.dart'
+    builder_factories:
+      - platformBuilder
+    build_extensions: { '.dart': [ '.p.dart' ] }
+    auto_apply: root_package
+    build_to: source
+    defaults:
+      generate_for:
+        include:
+          - lib/**
+      options:
+        platform: desktop
