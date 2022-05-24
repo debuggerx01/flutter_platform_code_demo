@@ -1,6 +1,5 @@
 @PlatformDetector()
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_code_demo/builder/platform_generator.dart';
 import 'package:flutter_platform_code_demo/utils.p.dart';
 
 import 'builder/platform_annotation.dart';
@@ -66,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Util().print('build');
+    Util().log('build');
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),

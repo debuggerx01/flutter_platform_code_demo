@@ -1,4 +1,7 @@
-import 'platform_generator.dart';
+enum PlatformType {
+  mobile,
+  desktop,
+}
 
 class PlatformDetector {
   const PlatformDetector();
