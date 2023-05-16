@@ -71,7 +71,7 @@ class _Visitor<R> extends RecursiveAstVisitor<R> {
   R? visitClassDeclaration(ClassDeclaration node) {
     _handleNode(
       node,
-      handleRename: (source, renameTo) => source.replaceFirst('class ${node.name.name}', 'class $renameTo'),
+      handleRename: (source, renameTo) => source.replaceFirst('class ${node.name.toString()}', 'class $renameTo'),
     );
     return super.visitClassDeclaration(node);
   }
@@ -81,7 +81,7 @@ class _Visitor<R> extends RecursiveAstVisitor<R> {
     _handleNode(
       node.variables,
       useParent: true,
-      handleRename: (source, renameTo) => source.replaceFirst(node.variables.variables.first.name.name, renameTo),
+      handleRename: (source, renameTo) => source.replaceFirst(node.variables.variables.first.name.toString(), renameTo),
     );
     return super.visitVariableDeclarationStatement(node);
   }
@@ -90,7 +90,7 @@ class _Visitor<R> extends RecursiveAstVisitor<R> {
   R? visitTopLevelVariableDeclaration(TopLevelVariableDeclaration node) {
     _handleNode(
       node,
-      handleRename: (source, renameTo) => source.replaceFirst(node.variables.variables.first.name.name, renameTo),
+      handleRename: (source, renameTo) => source.replaceFirst(node.variables.variables.first.name.toString(), renameTo),
     );
     return super.visitTopLevelVariableDeclaration(node);
   }
@@ -99,7 +99,7 @@ class _Visitor<R> extends RecursiveAstVisitor<R> {
   R? visitFieldDeclaration(FieldDeclaration node) {
     _handleNode(
       node,
-      handleRename: (source, renameTo) => source.replaceFirst(node.fields.variables.first.name.name, renameTo),
+      handleRename: (source, renameTo) => source.replaceFirst(node.fields.variables.first.name.toString(), renameTo),
     );
     return super.visitFieldDeclaration(node);
   }
@@ -117,7 +117,7 @@ class _Visitor<R> extends RecursiveAstVisitor<R> {
   R? visitFunctionDeclaration(FunctionDeclaration node) {
     _handleNode(
       node,
-      handleRename: (source, renameTo) => source.replaceFirst(node.name.name, renameTo),
+      handleRename: (source, renameTo) => source.replaceFirst(node.name.toString(), renameTo),
     );
     return super.visitFunctionDeclaration(node);
   }
@@ -126,7 +126,7 @@ class _Visitor<R> extends RecursiveAstVisitor<R> {
   R? visitMethodDeclaration(MethodDeclaration node) {
     _handleNode(
       node,
-      handleRename: (source, renameTo) => source.replaceFirst(node.name.name, renameTo),
+      handleRename: (source, renameTo) => source.replaceFirst(node.name.toString(), renameTo),
     );
     return super.visitMethodDeclaration(node);
   }
